@@ -64,6 +64,11 @@ the <F8> key if so.  For example, to remap it to <F3> instead, use:
  autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
 <
 
+Or you can opt to remove the key mapping
+>
+ let g:autopep8_disable_key_mapping=0
+<
+
 Do not fix these errors/warnings (default: E226,E24,W6)
 >
  let g:autopep8_ignore="E501,W293"

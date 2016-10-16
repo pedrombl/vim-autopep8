@@ -113,7 +113,9 @@ endif
 " The default mapping is registered under to <F8> by default, unless the user
 " remapped it already (or a mapping exists already for <F8>)
 if !exists("no_plugin_maps") && !exists("no_autopep8_maps")
-    if !hasmapto('Autopep8(')
+    if exists("g:autopep8_disable_key_mapping")
+        command! -nargs=? -bar Autopep8 call Autopep8(<f-args>)
+    elseif !hasmapto('Autopep8(')
         noremap <buffer> <F8> :call Autopep8()<CR>
         command! -nargs=? -bar Autopep8 call Autopep8(<f-args>)
     endif
